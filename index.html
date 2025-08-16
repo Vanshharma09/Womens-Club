@@ -5,105 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Womens Club Event</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      line-height: 1.6;
+      background: #f5f6fa;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
       height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
-      color: white;
+      padding: 20px;
     }
-
-    .container {
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
+    .hero h1 { font-size: 3rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 25px; }
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      display: flex; gap: 20px;
     }
-
     .social-links a {
-      width: 60px; height: 60px;
+      width: 55px; height: 55px;
       display: flex; justify-content: center; align-items: center;
-      border-radius: 15px;
+      border-radius: 12px;
       background: white;
       color: #333;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       text-decoration: none;
-      transition: 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
-
     .social-links a:hover {
-      transform: translateY(-8px) scale(1.1);
+      transform: scale(1.2);
       background: #ffcc00;
       color: black;
     }
 
-    footer {
-      position: absolute;
-      bottom: 20px;
+    /* Gallery Section */
+    .gallery {
+      padding: 50px 20px;
+      background: white;
+      text-align: center;
+    }
+    .gallery h2 { font-size: 2rem; margin-bottom: 20px; }
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .images img {
       width: 100%;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    .images img:hover { transform: scale(1.05); }
+
+    /* Video Section */
+    .videos {
+      padding: 50px 20px;
+      background: #f0f2f5;
+      text-align: center;
+    }
+    .videos h2 { font-size: 2rem; margin-bottom: 20px; }
+    .videos iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 340px;
+      border-radius: 12px;
+      margin: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: #aaa;
     }
   </style>
-
   <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
+
+  <!-- Hero Section -->
+  <section class="hero">
     <h1>🎉 Womens Club Annual Event 🎉</h1>
-    <p>Join us & stay connected with the Manager</p>
-    
+    <p>Connect with the Manager & Explore Our Work</p>
     <div class="social-links">
       <a href="https://facebook.com/manager" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="https://instagram.com/manager" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://youtube.com/manager" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://wa.me/91XXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
-  </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>📸 Highlights from Previous Events</h2>
+    <div class="images">
+      <img src="https://via.placeholder.com/400x250" alt="Event 1">
+      <img src="https://via.placeholder.com/400x250" alt="Event 2">
+      <img src="https://via.placeholder.com/400x250" alt="Event 3">
+      <img src="https://via.placeholder.com/400x250" alt="Event 4">
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="videos">
+    <h2>🎬 Event Videos</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" 
+      frameborder="0" allowfullscreen></iframe>
+  </section>
 
   <footer>
     © 2025 Womens Club | Designed with ❤️
   </footer>
-
-  <script>
-    // Smooth entry animation for icons
-    const icons = document.querySelectorAll(".social-links a");
-    icons.forEach((icon, i) => {
-      setTimeout(() => {
-        icon.style.opacity = "1";
-        icon.style.transform = "scale(1)";
-      }, i * 200 + 500);
-    });
-  </script>
 </body>
 </html>
